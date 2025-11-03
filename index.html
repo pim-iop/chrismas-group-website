@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎄 Prime's Christmas Neon Portfolio 🎅</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+  body { background: radial-gradient(circle at top, #000010, #0a001a); color:#fff; overflow-x:hidden; }
+  
+  /* Lock screen styles */
+  #lockScreen {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.95);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    text-align:center;
+    padding:20px;
+  }
+  #lockScreen input {
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+    margin-top:10px;
+    width:250px;
+    text-align:center;
+  }
+  #lockScreen button {
+    margin-top:15px;
+    padding:10px 25px;
+    font-size:18px;
+    border-radius:25px;
+    border:none;
+    cursor:pointer;
+    background:#00ff00;
+    color:#000;
+    font-weight:bold;
+    transition:all 0.3s;
+  }
+  #lockScreen button:hover { transform:scale(1.1); }
+
+  /* Hide portfolio content initially */
+  #portfolioContent { display:none; }
+
+  header { text-align:center; padding:50px 20px; background: linear-gradient(90deg,#ff0000,#00ff00,#ff0000); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-size:3em; font-weight:900; text-shadow:0 0 25px #ff0000,0 0 50px #00ff00; animation: glowText 2s infinite alternate; }
+  @keyframes glowText { from { text-shadow:0 0 20px #ff0000; } to { text-shadow:0 0 40px #00ff00; } }
+
+  nav{ display:flex; justify-content:center; gap:30px; margin-bottom:40px; }
+  nav a{ color:#fff; text-decoration:none; font-size:1.2em; padding:8px 15px; border:2px solid #00ff00; border-radius:15px; transition:.3s; }
+  nav a:hover{ background:#00ff00; color:#000; transform:scale(1.1); }
+
+  section{ padding:60px 20px; text-align:center; }
+  h2{ font-size:2.5em; margin-bottom:20px; color:#00ffcc; text-shadow:0 0 20px #00ffff; }
+  p{ font-size:1.2em; max-width:700px; margin:0 auto; color:#ccc; }
+
+  .projects{ display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:30px; }
+  .project-card{ background:rgba(255,255,255,0.1); border:2px solid #00ffcc; border-radius:20px; width:280px; padding:20px; transition:.3s; box-shadow:0 0 25px rgba(0,255,200,0.4); }
+  .project-card:hover{ transform:translateY(-8px); box-shadow:0 0 50px rgba(0,255,200,0.8); }
+  .project-card h3{ color:#00ff99; margin-bottom:10px; }
+
+  .contact-section{ background: linear-gradient(135deg,#ff0000,#008000); color:white; border-radius:20px; box-shadow:0 0 30px rgba(255,255,255,0.5); padding:40px 20px; max-width:700px; margin:0 auto 80px; animation:glow 2s ease-in-out infinite alternate; }
+  @keyframes glow{ from { box-shadow:0 0 20px #ff0000; } to { box-shadow:0 0 40px #00ff00; } }
+
+  input, textarea{ width:90%; margin:10px 0; padding:12px; border:none; border-radius:10px; font-size:16px; outline:none; }
+  button{ background:#fff; color:#ff0000; font-size:18px; font-weight:bold; padding:10px 30px; border:none; border-radius:25px; cursor:pointer; transition:all .3s; margin-top:10px; }
+  button:hover{ background:#00ff00; color:#fff; transform:scale(1.1); }
+  #statusMessage{ margin-top:10px; font-size:1.05em; color:#fff; min-height:1.2em; }
+  footer{ text-align:center; padding:25px; background:rgba(255,255,255,0.05); color:#ccc; }
+  .spinner{ display:inline-block; width:18px; height:18px; border:3px solid rgba(255,255,255,0.3); border-top-color:#fff; border-radius:50%; animation:spin 1s linear infinite; vertical-align:middle; margin-left:8px }
+  @keyframes spin{ to { transform:rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- Lock Screen -->
+<div id="lockScreen">
+  <h2>Enter the Secret Code 🎅</h2>
+  <input type="password" id="unlockCode" placeholder="Enter Code" />
+  <button id="unlockBtn">Unlock 🎄</button>
+  <p id="lockMessage" style="margin-top:10px;color:#ffdddd;"></p>
+</div>
+
+<!-- Portfolio Content -->
+<div id="portfolioContent">
+  <header>🎅 Prime's Neon Christmas Portfolio 🎄</header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me 🎁</h2>
+    <p>Hello! I'm <strong>Prime</strong>, a creative developer who loves building glowing neon apps and games! This Christmas, I'm sharing my favorite neon projects with you. Let's code with cheer! 🎅✨</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Cool Neon Projects 🎮</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🎁 Neon Clicker</h3>
+        <p>A clicker game with glowing effects and fun shop items.</p>
+      </div>
+      <div class="project-card">
+        <h3>🎅 Bingo Game</h3>
+        <p>Multiplayer bingo game — perfect for Christmas parties!</p>
+      </div>
+      <div class="project-card">
+        <h3>🎄 Video Editor</h3>
+        <p>Create festive videos with neon lights and sound effects.</p>
+      </div>
+      <div class="project-card">
+        <h3>❄️ Task App</h3>
+        <p>Stay productive even during the holidays!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>🎅 Contact Santa's Portfolio 🎄</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name 🎁" required>
+      <input type="email" id="email" placeholder="Your Email ✉️" required>
+      <textarea id="message" placeholder="Your Message 🎄" required rows="5"></textarea>
+      <button type="submit" id="sendBtn">Send Message 🎅</button>
+    </form>
+    <p id="statusMessage"></p>
+  </section>
+
+  <footer>Made with ❤️ by Prime | © 2025 Christmas Edition 🎄</footer>
+</div>
+
+<script>
+  const unlockBtn = document.getElementById('unlockBtn');
+  const unlockCodeInput = document.getElementById('unlockCode');
+  const lockScreen = document.getElementById('lockScreen');
+  const lockMessage = document.getElementById('lockMessage');
+  const portfolioContent = document.getElementById('portfolioContent');
+
+  unlockBtn.addEventListener('click', () => {
+    const code = unlockCodeInput.value.trim();
+    if(code === '322762') {
+      // Correct code, show portfolio
+      lockScreen.style.display = 'none';
+      portfolioContent.style.display = 'block';
+    } else {
+      lockMessage.textContent = '❌ Wrong code! Try again.';
+    }
+  });
+
+  // Optional: allow Enter key to submit
+  unlockCodeInput.addEventListener('keypress', e => {
+    if(e.key === 'Enter') unlockBtn.click();
+  });
+
+  // Contact form script (unchanged)
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwWMNztJ20SyGx3P6WSPGB68fQjE9H3-ExmeEtDmfiH2uDnOiLQovPTBgr8gW4oEQkZ/exec";
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('statusMessage');
+  const sendBtn = document.getElementById('sendBtn');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    status.textContent = '';
+    sendBtn.disabled = true;
+    const spinner = document.createElement('span'); spinner.className = 'spinner'; sendBtn.appendChild(spinner);
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const body = new URLSearchParams();
+    body.append('name', name);
+    body.append('email', email);
+    body.append('message', message);
+
+    fetch(scriptURL, { method: 'POST', body: body })
+      .then(response => {
+        if (response.ok) {
+          status.style.color = '#fff';
+          status.textContent = '🎉 Message sent successfully! Merry Christmas!';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        status.style.color = '#ffdddd';
+        status.textContent = '❌ Oops — message not sent. Try again later.';
+      })
+      .finally(() => {
+        sendBtn.disabled = false;
+        const s = sendBtn.querySelector('.spinner');
+        if (s) s.remove();
+      });
+  });
+</script>
+</body>
+</html>
